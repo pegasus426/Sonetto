@@ -25,7 +25,7 @@ public class MetricAnalysisResource {
 
     @POST
     @Path("/analyze")
-    public VerseAnalysis analyzeVerse(@Valid final AnalyzeVerseRequest request) {
+    public Uni<VerseAnalysis> analyzeVerse(@Valid final AnalyzeVerseRequest request) {
         return metricOrchestrator.getAnalysis(request.verse());
     }
 
