@@ -1,45 +1,65 @@
-# 🚀 Cursor Survival Kit: Arturo Edition (PC/Linux)
+# Sonetto
 
-Massimizza il tuo Engineering Mindset su Windows/Linux. 
-Poche scorciatoie, zero distrazioni, massimo throughput.
+Sonetto is a poetry IDE and tooling platform for modern poets.
 
----
+It helps users write poems following different metrical structures, supports multiple languages, runs AI-powered metrical analysis, and provides intuitive interfaces to save and evolve their work.
 
-## 🤖 Intelligenza Artificiale (AI Integration)
+Built for "new Dante" creators, Sonetto offers live rhyme and meter suggestions while writing.
 
-| Scorciatoia | Azione | Quando usarla? |
-| :--- | :--- | :--- |
-| `Ctrl + K` | **Inline Edit / Generate** | Scrivi codice o refactorizza la riga/selezione corrente. |
-| `Ctrl + L` | **Open AI Chat** | Analisi architetturale, debugging Mutiny o domande su TS. |
-| `Ctrl + Enter` | **Submit with Context** | Invia il prompt includendo i file aperti come contesto. |
+## Why Sonetto
 
----
+- Write with guidance instead of static text editing.
+- Compose across multiple poetic traditions and languages.
+- Get real-time suggestions for rhyme and metric patterns.
+- Receive AI-enhanced feedback on structure and flow.
+- Keep poems organized with a creator-friendly workspace.
 
-## 🛠️ Navigazione e Sistema (The Core)
+## Core Features
 
-| Scorciatoia | Azione | Quando usarla? |
-| :--- | :--- | :--- |
-| `Ctrl + Shift + P` | **Command Palette** | Per configurare l'IDE, zsh, o plugin Quarkus/Java. |
-| `Ctrl + P` | **Quick Open File** | Salta istantaneamente tra Service Java e Componente TS. |
-| `Ctrl + \`` | **Toggle Terminal** | Apri/Chiudi il tuo terminale zsh per i log di Quarkus. |
+- **Poetry-first editor** with live poetic constraints.
+- **Metric schemas** for structured composition workflows.
+- **Multilingual support** for cross-language poetry creation.
+- **AI-powered metrical analysis** for richer technical feedback.
+- **Live rhyme and meter hints** during composition.
+- **Poem persistence and project organization** through intuitive UI flows.
 
----
+## Monorepo Structure
 
-## 🔥 Quarkus Dev Joy Shortcuts (Terminal)
+- `be/` - Reactive backend (Java, Quarkus, Mutiny).
+- `fe/` - Frontend application (Angular, standalone components, strict TypeScript).
 
-Mentre il comando `qdev` (./mvnw quarkus:dev) è attivo nel terminale:
+## Quick Start
 
-* **`r`**: Riesegue immediatamente i test (Continuous Testing).
-* **`o`**: Apre la Dev UI (`localhost:8080/q/dev`) nel browser.
-* **`s`**: Forza il restart del sistema (raramente necessario con il Live Coding).
+### Backend (Quarkus + Mutiny)
 
----
+```bash
+cd be
+mvn quarkus:dev
+```
 
-## 💡 Pro-Tips di Arturo
+Backend default endpoint:
 
-1.  **Symbol Search**: Usa `Ctrl + Shift + O` per saltare direttamente a un metodo o a una variabile dentro il file Java corrente.
-2.  **Context Tagging**: Usa `@` nel prompt per puntare a file specifici (`@File`), cartelle (`@Folder`) o documentazione (`@Docs`).
-3.  **Multi-Cursor**: `Alt + Click` per scrivere su più righe contemporaneamente. Utile per mappare DTO noiosi.
+- `GET http://localhost:8080/api/ping`
 
----
-*Nota: Se usi Linux, assicurati che la tua distro non sovrascriva `Ctrl + Alt` per scorciatoie di sistema.*# Sonetto
+### Frontend (Angular)
+
+```bash
+cd fe
+npm install
+npm start
+```
+
+## Open Source
+
+Sonetto is open source under the MIT License.
+
+- License text: see `LICENSE`
+- Contributor workflow and engineering standards: see `CONTRIBUTING.md`
+
+## Vision
+
+Sonetto aims to become the developer-grade environment for poetry:
+
+- as practical as an IDE,
+- as expressive as a notebook,
+- and as supportive as a writing coach.
