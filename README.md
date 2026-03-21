@@ -65,3 +65,13 @@ Sonetto aims to become the developer-grade environment for poetry:
 - as practical as an IDE,
 - as expressive as a notebook,
 - and as supportive as a writing coach.
+
+
+## Dev Joy Mode
+
+```bash
+cd ./be
+rm -rf ~/.m2/wrapper/dists/apache-maven-3.9.6-bin
+./mvnw -v
+./mvnw quarkus:dev
+```
