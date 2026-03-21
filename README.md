@@ -36,6 +36,9 @@ Built for "new Dante" creators, Sonetto offers live rhyme and meter suggestions 
 cd be
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH="$JAVA_HOME/bin:$PATH"
+cp .env.example .env
+# opzionale: aggiorna .env con provider/API key reali
+set -a; source .env; set +a
 mvn quarkus:dev
 ```
 
@@ -75,3 +78,35 @@ rm -rf ~/.m2/wrapper/dists/apache-maven-3.9.6-bin
 ./mvnw -v
 ./mvnw quarkus:dev
 ```
+
+## Backend Environment in Docker
+
+The backend Docker image (`be/Dockerfile`) does not hardcode LLM credentials.
+Pass runtime environment variables when starting the container:
+
+```bash
+docker build -t sonetto-be ./be
+docker run --rm -p 8080:8080 \
+  -e OPENAI_COMPAT_API_KEY=change-me \
+  -e OPENAI_COMPAT_BASE_URL=http://host.docker.internal:11434/v1 \
+  -e OPENAI_COMPAT_MODEL=llama3-70b-8192 \
+  sonetto-be
+```
+
+Notes:
+- For Linux, if `host.docker.internal` is unavailable, use your host IP.
+- These variables map directly to `be/src/main/resources/application.properties`.
+
+## How to Run Tests (Arturo's Commands)
+
+### Daily Development
+
+`./mvnw test`
+
+Result: Runs all tests, but skips tests tagged as `integration`. Groq usage stays under control.
+
+### Manual Integration Tests
+
+`./mvnw test -Pit`
+
+Result: Runs only tests that call Groq. Useful to verify that prompts and API integration still work.
