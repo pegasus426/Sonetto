@@ -1,0 +1,14 @@
+# Ignora le cartelle di build locali
+**/node_modules
+**/target
+**/.quarkus
+**/dist
+
+# Ignora file IDE
+.cursor/
+.vscode/
+.idea/
+
+# Ignora file Docker locali
+docker-compose.yml
+postgres_data/
