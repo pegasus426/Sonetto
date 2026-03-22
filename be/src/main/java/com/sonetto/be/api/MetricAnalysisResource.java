@@ -2,8 +2,8 @@ package com.sonetto.be.api;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
-import com.sonetto.be.metric.model.VerseAnalysis;
-import com.sonetto.be.metric.service.MetricOrchestrator;
+import com.sonetto.be.service.MetricOrchestrator;
+import com.sonetto.be.service.ai.model.VerseAnalysis;
 
 import io.smallrye.mutiny.Uni;
 import jakarta.validation.Valid;

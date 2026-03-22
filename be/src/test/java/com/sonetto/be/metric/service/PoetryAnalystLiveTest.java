@@ -1,7 +1,8 @@
 package com.sonetto.be.metric.service;
 
-import com.sonetto.be.metric.ai.PoetryAnalyst;
-import com.sonetto.be.metric.model.VerseAnalysis;
+import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.model.VerseAnalysis;
+
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.jboss.logging.Logger; // Logger standard di Quarkus

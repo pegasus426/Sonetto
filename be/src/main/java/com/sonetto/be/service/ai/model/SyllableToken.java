@@ -1,4 +1,4 @@
-package com.sonetto.be.metric.model;
+package com.sonetto.be.service.ai.model;
 
 import dev.langchain4j.model.output.structured.Description;
 

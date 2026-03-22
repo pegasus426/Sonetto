@@ -1,6 +1,6 @@
-package com.sonetto.be.metric.ai;
+package com.sonetto.be.service.ai;
 
-import com.sonetto.be.metric.model.VerseAnalysis;
+import com.sonetto.be.service.ai.model.VerseAnalysis;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;

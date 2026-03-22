@@ -5,9 +5,10 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.sonetto.be.metric.ai.PoetryAnalyst;
-import com.sonetto.be.metric.model.SyllableToken;
-import com.sonetto.be.metric.model.VerseAnalysis;
+import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.model.SyllableToken;
+import com.sonetto.be.service.ai.model.VerseAnalysis;
+import com.sonetto.be.service.MetricOrchestrator;
 
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
