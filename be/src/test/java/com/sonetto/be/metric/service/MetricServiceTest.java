@@ -5,23 +5,23 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.PoetryAnalystAiService;
 import com.sonetto.be.service.ai.model.SyllableToken;
 import com.sonetto.be.service.ai.model.VerseAnalysis;
-import com.sonetto.be.service.MetricOrchestrator;
+import com.sonetto.be.service.MetricService;
 
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 
 @QuarkusTest
-class MetricOrchestratorTest {
+class MetricServiceTest {
 
     @Inject
-    MetricOrchestrator orchestrator;
+    MetricService metricService;
 
     @InjectMock
-    PoetryAnalyst mockAiService;
+    PoetryAnalystAiService mockAiService;
 
     @Test
     void testCacheEfficiency() {
@@ -36,8 +36,8 @@ class MetricOrchestratorTest {
         Mockito.when(mockAiService.analyzeVerse(verse))
                 .thenReturn(mockResponse);
 
-        VerseAnalysis firstResponse = orchestrator.getAnalysis(verse).await().indefinitely();
-        VerseAnalysis secondResponse = orchestrator.getAnalysis(verse).await().indefinitely();
+        VerseAnalysis firstResponse = metricService.getAnalysis(verse).await().indefinitely();
+        VerseAnalysis secondResponse = metricService.getAnalysis(verse).await().indefinitely();
 
         org.junit.jupiter.api.Assertions.assertEquals(11, firstResponse.totalMetricCount());
         org.junit.jupiter.api.Assertions.assertEquals(11, secondResponse.totalMetricCount());

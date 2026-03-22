@@ -1,6 +1,6 @@
 package com.sonetto.be.metric.service;
 
-import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.PoetryAnalystAiService;
 import com.sonetto.be.service.ai.model.VerseAnalysis;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -19,7 +19,7 @@ class PoetryAnalystLiveTest {
     private static final Logger LOG = Logger.getLogger(PoetryAnalystLiveTest.class);
 
     @Inject
-    PoetryAnalyst realAnalyst;
+    PoetryAnalystAiService realAnalyst;
 
     @Test
     void testRealGroqCall() {
