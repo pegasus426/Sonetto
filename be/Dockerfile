@@ -1,21 +1,12 @@
-# Stage 1: Build Native (Usiamo Mandrel per Java 21)
-FROM quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-21 AS build
-COPY --chown=quarkus:quarkus . /code/
-USER quarkus
-WORKDIR /code
+# Stage 1: Build
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN mvn package -DskipTests
 
-# Costruisce l'eseguibile nativo usando il wrapper mvnw incluso nel progetto
-RUN ./mvnw package -Dnative -DskipTests
-
-# Stage 2: Runtime (Micro-image minimale)
-FROM quay.io/quarkus/quarkus-micro-image:2.0
-WORKDIR /work/
-COPY --from=build /code/target/*-runner /work/application
-
-# Permessi e configurazione runtime
-RUN chmod 775 /work
+# Stage 2: Runtime (Fast-jar)
+FROM eclipse-temurin:21-jre-jammy
+ENV JAVA_APP_JAR=/deployments/quarkus-run.jar
+COPY --from=build /usr/src/app/target/quarkus-app/ /deployments/
 EXPOSE 8080
-USER 1001
-
-# L'host 0.0.0.0 è fondamentale per far vedere l'app a Railway/Render
-CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
+CMD ["java", "-jar", "/deployments/quarkus-run.jar"]
