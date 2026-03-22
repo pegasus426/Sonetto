@@ -19,7 +19,7 @@ class PoetryAnalystLiveTest {
     private static final Logger LOG = Logger.getLogger(PoetryAnalystLiveTest.class);
 
     @Inject
-    PoetryAnalystAiService realAnalyst;
+    PoetryAnalystAiServiceAiService realAnalyst;
 
     @Test
     void testRealGroqCall() {
