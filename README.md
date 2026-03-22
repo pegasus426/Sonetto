@@ -14,6 +14,17 @@ Built for "new Dante" creators, Sonetto offers live rhyme and meter suggestions 
 - Receive AI-enhanced feedback on structure and flow.
 - Keep poems organized with a creator-friendly workspace.
 
+## Live Sonetto Demo
+
+[https://sonetto.onrender.com/]
+
+##  SwaggerUI
+
+[https://sonettobe.onrender.com/q/swagger-ui/]
+[http://localhost:8080/q/swagger-ui/]
+
+
+
 ## Core Features
 
 - **Poetry-first editor** with live poetic constraints.
