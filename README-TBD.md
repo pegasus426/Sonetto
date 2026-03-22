@@ -218,3 +218,37 @@ Clean Up: Una volta che la feature è stabile al 100%, elimina il Feature Flag. 
 
 Il prossimo passo verso l'eccellenza
 Abbiamo parlato di come separare il codice. Ti va di vedere come configurare una Pipeline GitHub Actions che esegue automaticamente i test su Quarkus usando i Dev Services (Docker) per simulare un database reale durante la CI? È il modo definitivo per garantire che il tuo "Trunk" sia sempre pronto per il rilascio.
+
+
+> trunk based development
+
+
+
+
+Trunk-Based Development (TBD) is a version control management strategy where developers merge code changes into a single central branch (the "trunk" or main) multiple times a day. By using short-lived feature branches or direct commits, teams minimize merge conflicts, enable true continuous integration, and improve collaboration. 
+Optimizely
+Optimizely
+ +4
+Key Aspects of Trunk-Based Development:
+Frequent Merges: Developers push code to the main branch at least once a day, avoiding long-lived branches that diverge from the main codebase.
+Continuous Integration (CI): It acts as a prerequisite for CI, as frequent integration allows for immediate automated testing and validation.
+Reduced Merge Conflicts: Small, incremental updates make code integration simpler and less risky than traditional, long-lived branch models like Gitflow.
+Scalability: Small teams often commit directly to the trunk, while larger teams use short-lived branches (lasting a few hours or days) to manage complexity, according to Harness.
+Code Review Efficiency: Because changes are smaller, reviews are faster and more focused, often supported by automated testing, say Atlassian. 
+Atlassian
+Atlassian
+ +5
+Advantages
+Faster Feedback: Developers immediately know if their changes break existing functionality.
+Collaboration: Encourages better team communication and shared ownership of code.
+Elite Performance: Identified by semaphore.io as a core practice for high-performing, elite software teams to deliver faster, according to dora.dev. 
+semaphore.io
+semaphore.io
+ +3
+Implementation Tips
+Invest in robust automated testing to ensure the trunk is always in a deployable state, says Unleash.
+Use feature flags to manage incomplete features in production.
+Keep branches short-lived; delete them after merging. 
+Medium
+Medium
+ +4
