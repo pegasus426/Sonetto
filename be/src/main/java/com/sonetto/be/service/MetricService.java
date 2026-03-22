@@ -1,6 +1,6 @@
 package com.sonetto.be.service;
 
-import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.PoetryAnalystAiService;
 import com.sonetto.be.service.ai.model.VerseAnalysis;
 
 import io.quarkus.cache.CacheResult;
@@ -8,11 +8,11 @@ import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class MetricOrchestrator {
+public class MetricService {
 
-    private final PoetryAnalyst poetryAnalyst;
+    private final PoetryAnalystAiService poetryAnalyst;
 
-    public MetricOrchestrator(final PoetryAnalyst poetryAnalyst) {
+    public MetricService(final PoetryAnalystAiService poetryAnalyst) {
         this.poetryAnalyst = poetryAnalyst;
     }
 

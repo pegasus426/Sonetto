@@ -8,7 +8,7 @@ import dev.langchain4j.service.V;
 import io.quarkiverse.langchain4j.RegisterAiService;
 
 @RegisterAiService
-public interface PoetryAnalyst {
+public interface PoetryAnalystAiService {
 
     @SystemMessage("""
             Sei un esperto di metrica italiana.
