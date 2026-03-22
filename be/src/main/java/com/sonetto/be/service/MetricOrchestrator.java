@@ -1,7 +1,7 @@
-package com.sonetto.be.metric.service;
+package com.sonetto.be.service;
 
-import com.sonetto.be.metric.ai.PoetryAnalyst;
-import com.sonetto.be.metric.model.VerseAnalysis;
+import com.sonetto.be.service.ai.PoetryAnalyst;
+import com.sonetto.be.service.ai.model.VerseAnalysis;
 
 import io.quarkus.cache.CacheResult;
 import io.smallrye.mutiny.Uni;
