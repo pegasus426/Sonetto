@@ -18,7 +18,10 @@ Built for "new Dante" creators, Sonetto offers live rhyme and meter suggestions 
 
 [https://sonetto.onrender.com/]
 
-## SwaggerUI
+##  SwaggerUI
+
+[https://sonettobe.onrender.com/q/swagger-ui/]
+[http://localhost:8080/q/swagger-ui/]
 
 
 
